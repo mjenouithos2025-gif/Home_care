@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeCare Sensor · Cures a casa amb tranquil·litat</title>
+<meta name="description" content="HomeCare Sensor: monitoratge de l'habitació i de l'estat dels infants en recuperació a casa després d'una estada hospitalària.">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f6f7a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Salta al contingut</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inici"><span class="dot" aria-hidden="true"></span>HomeCare Sensor</a>
+    <nav aria-label="Principal">
+      <a href="#funcionament">Funcionament</a>
+      <a href="#rols">Metges i famílies</a>
+      <a href="#seguretat">Seguretat</a>
+      <a href="#contacte">Contacte</a>
+      <a class="btn small" href="#acces">Accés</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero wrap" id="inici">
+  <div class="hero-text">
+    <h1>Cada infant, ben cuidat a casa després de l'hospital</h1>
+    <p class="lead">Un sistema que vigila la temperatura, la humitat i el CO₂ de l'habitació i les constants bàsiques del nen, i avisa famílies i professionals sanitaris quan cal.</p>
+    <p class="note">Projecte per al repte iFEST de l'Hospital Sant Joan de Déu. És una eina de suport: no substitueix el personal mèdic.</p>
+  </div>
+  <div class="demo" aria-labelledby="demo-t">
+    <h2 id="demo-t">Prova-ho: temperatura de l'habitació</h2>
+    <p>El metge fixa un rang (aquí, 18–25 °C). Mou el control i observa els LED.</p>
+    <div class="leds" aria-hidden="true">
+      <span class="led blue" id="led-blue"></span><span class="led green" id="led-green"></span><span class="led red" id="led-red"></span>
+    </div>
+    <label for="temp">Temperatura: <strong><output id="temp-out" for="temp">21</output> °C</strong></label>
+    <input type="range" id="temp" min="10" max="32" value="21">
+    <p class="status" id="status" role="status" aria-live="polite">Dins del rang: LED verd.</p>
+  </div>
+</section>
+
+<section class="band" id="funcionament" aria-labelledby="f-t">
+  <div class="wrap">
+    <h2 id="f-t">Com funciona</h2>
+    <ol class="steps">
+      <li><h3>Sensors a l'habitació</h3><p>Una placa Arduino amb Wi-Fi mesura temperatura, humitat i CO₂. Tres LED (blau, verd i vermell) indiquen l'estat de l'habitació d'un cop d'ull.</p></li>
+      <li><h3>Rellotge del nen</h3><p>Registra la freqüència cardíaca, les hores de son, la qualitat del son i el nivell d'estrès.</p></li>
+      <li><h3>Dades i alertes</h3><p>Tot es desa per veure'n l'evolució. Si un valor surt de l'habitual, s'avisa les famílies i els professionals.</p></li>
+      <li><h3>Càmera opcional</h3><p>Funciona de manera independent i només la poden veure els pares, per saber si el nen dorm o és despert.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="wrap" id="rols" aria-labelledby="r-t">
+  <h2 id="r-t">Una sola aplicació, dues vistes</h2>
+  <div class="two">
+    <article><h3>Metge o metgessa</h3><ul>
+      <li>Consulta les dades i l'evolució dels seus pacients</li>
+      <li>Configura els rangs de cada pacient i els horaris de medicació</li>
+      <li>Contacta amb les famílies per fer el seguiment</li></ul></article>
+    <article><h3>Família</h3><ul>
+      <li>Veu en temps real l'habitació i l'estat del nen</li>
+      <li>Consulta un resum mensual de l'evolució</li>
+      <li>Rep notificacions i recordatoris de medicació</li>
+      <li>Accedeix a la càmera</li></ul></article>
+  </div>
+  <p class="note">En una fase posterior, els metges de capçalera també podran revisar les dades i valorar si cal actuar.</p>
+</section>
+
+<section class="band" id="seguretat" aria-labelledby="s-t">
+  <div class="wrap">
+    <h2 id="s-t">Seguretat i privacitat</h2>
+    <p class="lead">Les dades de salut d'infants són especialment sensibles. El projecte es dissenya d'acord amb el RGPD.</p>
+    <ul class="checks">
+      <li>Accés amb inici de sessió i permisos segons el rol</li>
+      <li>Comunicació xifrada (HTTPS) i accés a la càmera restringit als pares</li>
+      <li>Només es recullen les dades necessàries per al seguiment mèdic</li>
+      <li>Les famílies poden demanar l'accés, la rectificació o l'esborrat de les seves dades</li>
+    </ul>
+    <p class="note">Aquesta pàgina és informativa: no recull dades ni utilitza galetes.</p>
+  </div>
+</section>
+
+<section class="wrap" id="acces" aria-labelledby="a-t">
+  <div class="access">
+    <h2 id="a-t">Accés per a metges i famílies</h2>
+    <p>Els comptes es crearan per invitació de l'equip sanitari i es validaran en un servidor segur, amb verificació en dos passos. L'accés encara no està actiu: aquesta web és la presentació del projecte.</p>
+  </div>
+</section>
+
+<section class="wrap" id="contacte" aria-labelledby="c-t">
+  <h2 id="c-t">Contacte</h2>
+  <p>Voleu conèixer el projecte? Escriviu-nos a <a href="mailto:mjenoui.thos2025@gmail.com">mjenoui.thos2025@gmail.com</a>.</p>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 HomeCare Sensor · Projecte intermodular · No substitueix l'atenció mèdica professional.</div></footer>
+</body>
+</html>
